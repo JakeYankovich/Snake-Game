@@ -28,8 +28,8 @@ yPrev = [0]*totalArea
 
 lastPressed = "r"
 
-xFood = random.randint(1, ((gWidth  / size) -2)) * size
-yFood = random.randint(1, ((gHeight / size) -2)) * size
+xFood = random.randint(1, int((gWidth  / size) -2)) * size
+yFood = random.randint(1, int((gHeight / size) -2)) * size
 
 quarterArea = int(totalArea/4)
 rRainbow = [0]*quarterArea
@@ -137,12 +137,12 @@ while run:
         xHead = (gWidth - size)
 
     if (xHead == xFood) and (yHead == yFood): #when you get food
-        xFood = random.randint(1, (gWidth  / size -2)) * size #new food spawned
-        yFood = random.randint(1, (gHeight / size -2)) * size
+        xFood = random.randint(1, int(gWidth  / size -2)) * size #new food spawned
+        yFood = random.randint(1, int(gHeight / size -2)) * size
         
         while (xFood, yFood) in list(zip(xPrev, yPrev)):
-            xFood = random.randint(1, (gWidth  / size -2)) * size #IF food spawns inside snake body,
-            yFood = random.randint(1, (gHeight / size -2)) * size #redo it
+            xFood = random.randint(1, int(gWidth  / size -2)) * size #IF food spawns inside snake body,
+            yFood = random.randint(1, int(gHeight / size -2)) * size #redo it
         tail[tailCount] = True #tail count ++
         tailCount += 1
 
